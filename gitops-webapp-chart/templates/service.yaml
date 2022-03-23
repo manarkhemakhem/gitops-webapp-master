@@ -14,10 +14,3 @@ spec:
   selector:
     {{- include "gitops-webapp-chart.selectorLabels" . | nindent 4 }}
 
-
-
-
-
-
-
-

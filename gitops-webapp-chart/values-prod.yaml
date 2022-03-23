@@ -1,8 +1,8 @@
 replicaCount: 1
 image:
-  repository: gitlab.com/manarkhemakhem0/gitops-webapp
+  repository: gitlab.com/manarkhemakhem0/gitops-webapp-master
   pullPolicy: Always
-  tag: 5283ddcba0fd72e9379ab2d92417f54c897c6b5c
+  tag: ""
 namespace:
   name: prod
 imagePullSecrets: []

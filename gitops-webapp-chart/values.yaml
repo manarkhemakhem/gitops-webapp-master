@@ -5,13 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: gitlab.com/manarkhemakhem0/gitops-webapp
+  repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
-
-namespace:
-  name: demo
 
 imagePullSecrets: []
 nameOverride: ""
@@ -44,16 +41,16 @@ service:
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: ""
+    - host: chart-example.local
       paths:
         - path: /
-          pathType: Prefix
+          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

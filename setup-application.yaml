@@ -10,7 +10,7 @@ spec:
     helm:
       valueFiles:
       - values-dev.yaml
-    repoURL: https://gitlab.com/manarkhemakhem0/gitops-webapp.git
+    repoURL: https://gitlab.com/manarkhemakhem0/gitops-webapp-master.git
     targetRevision: HEAD
     path: gitops-webapp-chart
   destination:
@@ -31,7 +31,7 @@ spec:
     helm:
       valueFiles:
       - values-prod.yaml
-    repoURL: https://gitlab.com/manarkhemakhem0/gitops-webapp.git
+    repoURL: https://gitlab.com/manarkhemakhem0/gitops-webapp-master.git
     targetRevision: HEAD
     path: gitops-webapp-chart
   destination:

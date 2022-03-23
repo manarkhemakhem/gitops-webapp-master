@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: gitlab.com/manarkhemakhem0/gitops-webapp-master
+  repository: registry.gitlab.com/manarkhemakhem0/gitops-webapp-master
   pullPolicy: Always
   tag: ""
 namespace:

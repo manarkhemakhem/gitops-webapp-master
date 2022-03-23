@@ -271,7 +271,7 @@ service:
 
   ## Specify the service type e.g., ClusterIP, NodePort, Loadbalancer or ExternalName
   ##
-  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+  ##f ref: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   ##
   type: ClusterIP
 

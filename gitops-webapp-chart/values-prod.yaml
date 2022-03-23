@@ -1,0 +1,46 @@
+replicaCount: 1
+image:
+  repository: gitlab.com/manarkhemakhem0/gitops-webapp
+  pullPolicy: Always
+  tag: 5283ddcba0fd72e9379ab2d92417f54c897c6b5c
+namespace:
+  name: prod
+imagePullSecrets: []
+nameOverride: ''
+fullnameOverride: ''
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ''
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+service:
+  type: ClusterIP
+  port: 80
+ingress:
+  enabled: true
+  className: ''
+  annotations: {}
+spec:
+  rules:
+    - host: webapp.prod.127.0.0.1.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gitops-webapp-svc
+                port:
+                  number: 80
+  tls: []
+resources: {}
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+nodeSelector: {}
+tolerations: []
+affinity: {}

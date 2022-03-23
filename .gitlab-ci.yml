@@ -43,14 +43,14 @@ deploy-dev:
     - git config --global user.email "gitlab@gitlab.com"
     - git config --global user.name "GitLab CI/CD"
   script:
-    - git checkout -B master
-    - git pull origin master
+    - git checkout -B main
+    - git pull origin main
    # - yq -yi --arg appVersion "$APPVER" '.appVersion |= $appVersion' gitops-webapp-chart/Chart.yaml
    # - cat gitops-webapp-chart/Chart.yaml
     - yq -yi --arg tag "$CI_COMMIT_SHA" '.image.tag |= $tag' gitops-webapp-chart/values-dev.yaml
     - cat gitops-webapp-chart/values-dev.yaml
     - git commit -am '[skip ci] DEV image update'
-    - git push origin master
+    - git push origin main
   only:
     - main
 
@@ -66,14 +66,14 @@ deploy-prod:
     - git config --global user.email "gitlab@gitlab.com"
     - git config --global user.name "GitLab CI/CD"
   script:
-    - git checkout -B master
-    - git pull origin master
+    - git checkout -B main
+    - git pull origin main
    # - yq -yi --arg appVersion "$APPVER" '.appVersion |= $appVersion' gitops-webapp-chart/Chart.yaml
    # - cat gitops-webapp-chart/Chart.yaml
     - yq -yi --arg tag "$CI_COMMIT_SHA" '.image.tag |= $tag' gitops-webapp-chart/values-prod.yaml
     - cat gitops-webapp-chart/values-prod.yaml
     - git commit -am '[skip ci] PROD image update'
-    - git push origin master
+    - git push origin main
   only:
     - main
   when: manual
